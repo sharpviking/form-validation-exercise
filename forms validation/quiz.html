@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form name="myForm">
+      name: <input type="text" name="username" /><br />
+      password: <input type="password" name="pwd" /><br />
+      <input type="submit" value="submit" />
+    </form>
+
+    <script>
+      document.forms["myform"].addEventListener("submit", validateData);
+      function validateData(e) {
+        e.preventDefault();
+        let pwd = document.forms["myform"][pwd].value;
+        if (pwd.length >= 3) {
+          console.log("valid");
+        } else {
+          console.log("invalid");
+        }
+      }
+    </script>
+  </body>
+</html>
